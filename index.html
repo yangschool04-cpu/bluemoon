@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 글 피드백 도우미</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>학생 글 피드백 도우미 📝</h1>
+            <p>선생님, 학생의 글을 아래에 입력해주세요.</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="studentText" placeholder="학생이 쓴 글을 여기에 붙여넣기 하세요..."></textarea>
+                <button id="feedbackBtn" class="primary-btn">피드백 받기 ✨</button>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <h2>분석 결과</h2>
+                <table class="feedback-table">
+                    <thead>
+                        <tr>
+                            <th>맞춤법 교정 사항</th>
+                            <th>문맥적 흐름 평가</th>
+                            <th>향후 개선점</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feedbackBody">
+                        <!-- JS로 내용이 채워집니다 -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    <!-- 환경변수(.env 역할) 불러오기 -->
+    <script src="env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

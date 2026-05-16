@@ -1,0 +1,7 @@
+# API 키 및 보안 설정 파일 제외
+env.js
+.env
+
+# OS 생성 파일 제외
+.DS_Store
+Thumbs.db
