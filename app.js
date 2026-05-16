@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showFeedbackResult(result);
             
             // Supabase 데이터베이스에 저장
-            if (SUPABASE_URL !== '여기에_Supabase_URL_입력') {
+            if (SUPABASE_URL && SUPABASE_URL !== '여기에_Supabase_URL_입력' && SUPABASE_URL.trim() !== '') {
                 saveToSupabase(text, result);
             } else {
                 console.warn('Supabase URL이 입력되지 않아 저장을 건너뜁니다.');
