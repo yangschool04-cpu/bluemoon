@@ -2,6 +2,6 @@
   "name": "bluemoon-feedback",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo \"window.ENV = { GEMINI_API_KEY: '${GEMINI_API_KEY}', SUPABASE_URL: '${SUPABASE_URL}', SUPABASE_KEY: '${SUPABASE_KEY}' };\" > env.js"
+    "build": "mkdir -p public && cp index.html style.css app.js public/ && echo \"window.ENV = { GEMINI_API_KEY: '${GEMINI_API_KEY}', SUPABASE_URL: '${SUPABASE_URL}', SUPABASE_KEY: '${SUPABASE_KEY}' };\" > public/env.js"
   }
 }
