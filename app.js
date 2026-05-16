@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const SUPABASE_URL = window.ENV.SUPABASE_URL;
     const SUPABASE_KEY = window.ENV.SUPABASE_KEY;
     
-    const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+    const supabase = (window.supabase && SUPABASE_URL && SUPABASE_URL.trim() !== '' && SUPABASE_URL !== '여기에_Supabase_URL_입력') 
+        ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) 
+        : null;
 
     feedbackBtn.addEventListener('click', async () => {
         const text = studentText.value.trim();
