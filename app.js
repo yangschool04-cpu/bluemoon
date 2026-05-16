@@ -110,7 +110,11 @@ ${text}
         }
 
         const data = await response.json();
-        const responseText = data.candidates[0].content.parts[0].text;
+        let responseText = data.candidates[0].content.parts[0].text;
+        
+        // 간혹 AI가 ```json 과 같은 마크다운을 붙여서 보낼 경우를 대비해 제거
+        responseText = responseText.replace(/```json/gi, '').replace(/```/g, '').trim();
+        
         return JSON.parse(responseText);
     }
 
